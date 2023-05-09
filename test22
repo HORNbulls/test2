@@ -1,22 +1,5 @@
-CREATE OR REPLACE PROCEDURE pr_check_credetials (
-    p_username  IN VARCHAR2,
-    p_password  IN VARCHAR2,
-    ov_v_output OUT VARCHAR2
-) AS
-    l_count NUMBER;
-BEGIN
-    SELECT
-        COUNT(*)
-    INTO l_count
-    FROM
-        prasanna_tb_credentials
-    WHERE
-        username = p_username
-        AND password = p_password;
-
-    IF l_count = 1 THEN
-        ov_v_output := 'Correct credentials';
-    ELSE
-        ov_v_output := 'Invalid credentials';
-    END IF;
-END;
+LINE/COL  ERROR
+--------- -------------------------------------------------------------
+8/1       PL/SQL: Statement ignored
+8/1       PLS-00201: identifier 'PR_CHECK_CREDENTIALS' must be declared
+Errors: check compiler log
